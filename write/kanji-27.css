@@ -1,0 +1,231 @@
+body {
+font-family:Sans-serif;
+}
+h1 {
+font-size: 1.5em;
+text-align: center;
+}
+h2 {
+font-size: 1em;
+text-align: center;
+}
+#choice_table {
+font-weight: normal;
+text-align: left;
+}
+#choice_table .choice {
+border: 2px solid #ddd;
+border-color: #ddd #aaa #aaa #ddd;
+padding: 2px;
+cursor:pointer;
+width:20px;
+height:20px;
+}
+#choice_table .chosen {
+background-color: #DDA;
+border: 2px solid #666;
+border-color: #aaa #ddd #ddd #aaa;
+padding: 2px;
+cursor:pointer;
+width:20px;
+height:20px;
+}
+#choice_table .invalid {
+border: 2px solid #ddd;
+border-color: #ddd #aaa #aaa #ddd;
+padding: 2px;
+cursor:pointer;
+opacity:.20;
+filter:alpha(opacity=20);
+width:20px;
+height:20px;
+}
+#found_kanji a {
+text-decoration:none;
+color: #007;
+font-size:23px;
+text-align:center;
+vertical-align:middle;
+}
+.write_kanji {
+font-size:23px;
+text-align:center;
+vertical-align:middle;
+}
+.write_kanji:hover {
+color:green;
+}
+.unlinked_kanji {
+font-size:23px;
+text-align:center;
+vertical-align:middle;
+}
+#found_kanji a:hover {
+color: black;
+background-color: #CCF;
+}
+span#toggleobscuretext:hover {
+color:blue;
+background:skyblue;
+text-align: center;
+}
+p#kanji_container a:hover {
+background-color:gold;
+color:fuchsia;
+}
+#documentation {
+clear:left;
+}
+.number {
+background-color:aliceblue;
+color:#000;
+font-weight: bold;
+text-align:center;
+padding:0;
+margin:0;
+}
+.nojavascript {
+background-color: gold;
+color:black;
+border-collapse: collapse; 
+border-style: solid;
+border-width: 1px;
+border-color: #888;
+margin: 10px;
+padding: 10px;
+}
+.nojavascript h2 {
+font-size:50px;
+color: red;
+padding:0px;
+margin:0px;
+}
+.overflowbuttons {
+float: left;
+}
+.overflowbuttons:hover {
+background-color:#F00;
+color:#99F;   
+}
+.overflowbuttons a {
+font-size:20px;
+}
+.overflowbuttons a:hover {
+color:#99F;   
+}
+.overflowbuttons a.deadupbutton {
+color:#000;
+opacity:.20;
+filter:alpha(opacity=20);
+}
+.overflowbuttons a.deadupbutton:hover {
+color:#000;
+}
+#found_kanji a.number {
+font-size:20px;
+}
+#contact-info {
+/*padding-top: 10px;*/
+/*clear:both;*/
+}
+.google_ad_horizontal {
+width:728px;
+height:90px;
+margin:15px;
+}
+.google_ad_doubles {
+margin:15px;
+}
+#results_table {
+padding: 10px;
+}
+#mr_results {
+text-align: left;
+}
+#kanji_menu {
+padding:4px;
+}
+#kanji_menu td {
+font-size: 16px;
+}
+#kanji_menu td#input-box-cell {
+padding: 0px;
+}
+#kanji_menu td#input-box-cell a {
+text-decoration: underline;
+color: #007;
+padding: 0px;
+}
+#kanji_menu a {
+text-decoration: none;
+color:black;
+}
+#kanji_menu a:visited {
+color:black;
+}
+#kanji_menu td.not_chosen_tab {
+border: solid 3px ;
+border-color: #ddd #aaa #aaa #ddd;
+padding: 3px;
+}
+#kanji_menu td.chosen_tab {
+background-color: #dda;
+border: solid 3px ;
+border-color: #aaa #ddd #ddd #aaa;
+padding: 3px;
+}
+#option-table th {
+text-align: left;
+padding-right: 25px;
+}
+.option-radio {
+vertical-align: top;
+padding-right: 25px;
+padding-left: 10px;
+}
+.acknowledgement {
+padding-top: 10px;
+font-size: 80%;
+}
+#input_box_div {
+padding:0px;
+margin:0px;
+/*padding-left:30px;*/
+}
+#input_box_input {
+font-size: 110%;
+}
+#input_box {
+display: inline;
+}
+.message {
+padding:10px;
+margin:10px;
+border: solid 1px;
+background-color: #DDA;
+}
+.master {
+vertical-align:top;
+}
+#user-image {
+border:none;
+}
+.kana-table {
+border-collapse: collapse;
+}
+.kana-table td {
+font-size:120%;
+padding:5px;
+border: 2px solid #ddd;
+border-color: #ddd #aaa #aaa #ddd;
+}
+a.help-link {
+text-decoration: underline;
+color: #007;
+padding:20px;
+}
+#lang-switch {
+height: 2em;
+vertical-align: bottom;
+line-height:2em;
+}

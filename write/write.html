@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Kanji recognition at sljfaq.org</title>
+
+<link rel=stylesheet href="kanji-27.css" media=all>
+<link rel=stylesheet href="draw-27.css" media=all>
+<script type="text/javascript" src="canvas-27.js"></script>
+<script type="text/javascript" src="draw-27.js"></script>
+<script type="text/javascript" src="kanji-27.js"></script>
+<!--<script type="text/javascript">
+window.google_analytics_uacct = "UA-11731688-2";
+</script>-->
+</head>
+<body  onload="initialize_input_box (); drawkanji_onload()">
+    <script>
+        var iframe=true;
+    </script>
+    <table>
+        <tr>
+            <td colspan='4'>
+                <canvas id='drawkanji-canvas' class='drawkanji-canvas' width='300' height='300'>
+                </canvas>
+            </td>
+            <td>  
+                <script type="text/javascript">
+                    max_kanji=20*20;
+                    results_table_columns=20;
+                </script>
+                <table class="results"> 
+                <tr>
+                    <td>
+                        <input type="checkbox" id="look-ahead" checked="checked">
+                        <label for="look-ahead">Look ahead (don't match exactly)</label>
+                        <script type="text/javascript">
+                            //draw_cookie_set ("look-ahead")
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="show-numbers" checked="checked">
+                        <label for="show-numbers">Show stroke numbers</label>
+                        <script type="text/javascript">
+                            //draw_cookie_set ("show-numbers")
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="save-my-input" checked="checked">
+                        <label for="save-my-input">Save my input</label>
+                        <script type="text/javascript">
+                            //draw_cookie_set ("save-my-input")
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="ignore-stroke-order">
+                        <label for="ignore-stroke-order">Ignore stroke order</label>
+                        <script type="text/javascript">
+                            //draw_cookie_set ("ignore-stroke-order")
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="up_button" class="overflowbuttons">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="found_kanji">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="down_button" class="overflowbuttons">
+                        </div>
+                    </td>
+                </tr>
+                </table>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id='drawkanji-clear-button' type='button' value='Clear'>
+            </td>
+            <td>
+                <input id='drawkanji-back-line-button' type='button' value='Remove last'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='4'>
+                <div id='found_kanji'>
+                </div>
+            </td>
+        </tr>
+    </table>
+<!--<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11731688-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+-->
+<script>
+var ml = new Object ();ml.empty_search="There is nothing to search for.";</script>
+</body>
+</html>
+

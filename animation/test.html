@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="ja" lang="ja">
+
+<head>
+<script src="js/kanjiSvg.js" type="text/javascript"></script>
+<script src="js/kanjirender.js" type="text/javascript"></script>
+</head>
+  <body>
+    <h1>
+        <span id="logotxt"></span>
+        Canvas User Interface
+    </h1>
+    <canvas style="position:absolute; left:-20px; top:-20px; width:160px; height:80px;" width="660" height="330" id="logocanvas">
+        <script type="text/javascript">
+            /*var c = document.getElementById("logocanvas").getContext("2d");
+            document.getElementById("logotxt").innerHTML="　　　　";
+            c.strokeStyle = "#fff";
+            c.scale(1.8,1.8);
+            c.translate(20, 45);
+            c.rotate(Math.PI*2/360*357); 
+            
+            renderMoji(c, "日", 5, 1)(function() { 
+                c.translate(100, 0); 
+                renderMoji(c, "本", 5, 1)(function() { 
+                    c.translate(100, 0); 
+                    renderMoji(c, "語", 5, 1)(); 
+                }); 
+            })();*/
+            animateWriting("日本語", "logotxt", 100);
+            
+        </script>
+    </canvas>
+    <textarea id="src" style="width:800px; height:150px;margin-left:30px;">
+    </textarea>
+    <div style="padding:10px 0 0 0; font-weight:bold;">
+    Speed: 
+    <select id="speed">
+		<option value="0">Instant</option>
+		<option value="5">Superman</option>
+		<option value="40">Normal</option>
+		<option value="100">Slow</option>
+		<option value="250">Very Slow</option>
+	</select>
+    <button onclick="animateWriting(document.getElementById('src').value, 'out', parseInt(document.getElementById('speed').value));">Transcribe</button>
+    </div>
+    <div id="out" style="padding-top:30px; font-size:2em"></div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+.drawkanji-canvas {
+ width: 300px;
+ height: 300px;
+ margin: 0px;
+ background-color: aliceblue;
+ border-collapse: collapse; 
+ border-style: solid;
+ border-width: 1px;
+ border-color: #888;
+ -moz-user-select:none;
+ touch-action: none;
+}
+
+.drawkanji-dot {
+  position:absolute;
+  background:#000;
+  width:3px;
+  height:3px;
+  z-index:32768;
+  overflow: hidden;
+}
+
+.drawkanji-blob {
+  position:absolute;
+  background:red;
+  width:6px;
+  height:6px;
+  z-index:32768;
+  overflow: hidden;
+}
+
+.drawkanji-table {
+  margin-left: 20px;
+  border-width: 0px;
+}
+
+.drawkanji-stroke-number {
+  position:absolute;
+  z-index:32768;
+  overflow: hidden;
+  color:purple;
+  background-color: aliceblue;
+  font-weight:bold;
+  font-size:14px;
+}
+
+::-moz-selection{
+ background-color: aliceblue;
+ color:purple;
+}
+
+::selection {
+ background-color: aliceblue;
+ color:purple;
+}
+
+#canvas-advert {
+    font-size:17px;
+    font-weight:bold;
+    padding:0px;
+    margin:10px;
+    margin-left:80px;
+}
+
+#canvas-advert-inline {
+    font-size:17px;
+    font-weight:bold;
+    background: #EFF;
+    padding:5px;
+    margin:0px;
+    border: solid 1px;
+}
