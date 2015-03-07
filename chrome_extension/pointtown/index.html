@@ -1,0 +1,129 @@
+<!--
+// ポイントタウンのログイン状態を判別して情報を表示する
+-->
+<!doctype html>
+<html lang="ja" id="pt-plugin">
+<head>
+<meta charset="UTF-8">
+<title>ポイントタウン</title>
+<!-- css -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+<!-- JS files -->
+<script src="js/analytics.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery.cookie-1.4.1.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/ecl.js"></script>
+<script src="js/popup.js"></script>
+</head>
+<body>
+
+<!-- user status -->
+<div id="pt-status">
+  <div class="notification-pre-pt">
+    <a href="http://www.pointtown.com/ptu/mypage/point_history.do?target=prePointHistory" target="_blank"><i class="fa fa-info-circle"></i> 予定付与ポイントが付きました <i class="fa fa-chevron-right"></i></a>
+  </div>
+  <ul class="clearfix"></ul>
+</div>
+
+<div id="section-search-1" class="section section-search">
+  <strong class="func-ttl">検索</strong>
+  <div class="section-search-inner clearfix">
+    <!-- 検索対象変更プルダウン -->
+    <div class="section-search-selecter-wrap">
+      <select class="section-search-selecter" name="section-search-selecter">
+        <option value=".section-search-web" class="section-search-selecter-web" selected="selected">ウェブ</option><!-- デフォルト選択 -->
+        <option value=".section-search-goods" class="section-search-selecter-goods">商品</option>
+        <option value=".section-search-service" class="section-search-selecter-service">サービス(ショップ名)</option>
+        <option value=".section-search-poitto" class="section-search-selecter-poitto">掲示板</option>
+        <option value=".section-search-hotel" class="section-search-selecter-hotel">国内ホテル</option>
+      </select>
+    </div>
+
+    <!-- 検索対象| web/サービス/商品/トラベル -->
+    <div class="section-search-formList clearfix">
+      <!-- ▼ウェブ検索▼ -->
+      <form class="euc-jp section-search-web" name="searchform" action="http://www.pointtown.com/ptu/search.do?" method="get">
+        <input type="hidden" name="function" value="extension">
+        <input type="hidden" name="type" value="extension">
+        <input type="hidden" name="user_gender" value="0">
+        <input type="hidden" name="o" value="yst">
+        <input type="hidden" name="large_img" value="on">
+        <input id="search-web" placeholder="検索で1日4pt" class="section-search-form-text-web section-search-form-text" type="text" name="q" value="">
+        <input class="section-search-form-submit" type="submit" value="検索">
+        <div class="section-search-web-rule clickable">ルール</div>
+      </form>
+      <!-- ▲ウェブ検索▲ -->
+
+      <!-- ▼商品検索▼ -->
+      <form class="euc-jp section-search-goods" target="_blank" action="http://www.pointtown.com/ptu/search.do?" method="get" name="searchform">
+        <input class="search-type" type="hidden" name="o" value="shopping">
+        <input type="hidden" name="site" value="all">
+        <input type="hidden" name="large_img" value="on">
+        <input id="search-goods" placeholder="商品を検索" class="section-search-form-text section-search-form-text-goods" name="q" type="text" value="">
+        <input class="section-search-form-submit" type="submit" value="検索">
+      </form>
+      <!-- ▲商品検索▲ -->
+
+      <!-- ▼サービス検索▼ -->
+      <form class="euc-jp section-search-service" target="_blank" action="http://www.pointtown.com/ptu/search.do?" method="get" name="searchform">
+        <input type="hidden" name="o" value="af">
+        <input type="hidden" name="large_img" value="on">
+        <input id="search-service" placeholder="サービスを検索" class="section-search-form-text section-search-form-text-service" name="q" type="text" value="">
+        <input class="section-search-form-submit" type="submit" value="検索">
+      </form>
+      <!-- ▲サービス検索▲ -->
+
+      <!-- ▼掲示板検索▼ -->
+      <form class="euc-jp section-search-poitto" target="_blank" action="http://www.pointtown.com/ptu/search.do?" method="get" name="searchform">
+        <input type="hidden" name="o" value="poitto">
+        <input type="hidden" name="large_img" value="on">
+        <input id="search-bbs" placeholder="掲示板を検索" class="section-search-form-text section-search-form-text-poitto" name="q" type="text" value="">
+        <input class="section-search-form-submit" type="submit" value="検索">
+      </form>
+      <!-- ▲掲示板検索▲ -->
+
+      <!-- ▼ホテル▼ -->
+      <form class="section-search-hotel" target="_blank" action="http://travel.pointtown.com/search/list/" accept-charset="UTF-8" method="get" target="_blank" name="searchFormHotel">
+        <input type="hidden" name="searchFrom" value="town">
+        <input type="hidden" name="searchType" value="2">
+        <input type="hidden" name="searchTarget" value="3">
+        <input placeholder="ホテルを検索" class="section-search-form-text section-search-form-text-hotel" name="keyWord" type="text" value="">
+        <input class="section-search-form-submit" type="submit" value="検索">
+      </form>
+      <!-- ▲ホテル▲ -->
+
+    </div>
+    <!-- 検索対象| web/サービス/商品/トラベル -->
+  </div>
+  <!-- /.section-search-inner -->
+
+  <div class="section-search-web-rule-detail clearfix">
+    <strong>ウェブ検索について</strong>
+    <ul>
+      <!-- <li>プラグインからウェブ検索するだけで1回につき<strong>4pt</strong>貯まります。</li> -->
+      <!-- <li><strong>【Chromeウェブ検索限定】</strong>11/12 12:00〜01/15の期間限定でプラグインからウェブ検索するだけで通常1回につき4ptのところ<strong>8pt</strong>貯まります。</li>
+      <li><strong>【Chromeウェブ検索限定】</strong>検索で毎日宝くじが1枚GETできます。<br><a href="http://www.pointtown.com/ptu/takarakuji/index.do#takarakuji-howto" target="_blank">>>宝くじについてはこちら</a></li> -->
+      <li>ポイント獲得チャンスは1日1回のみです。</li>
+      <li><span class="red">ウェブ検索のポイント付与が5分間隔となりますのでご注意ください。</span></li>
+      <li><span class="red">直近で検索したキーワードはポイント付与の対象になりません。</span></li>
+      <li>ログインした状態で検索しないと、ポイントは加算されません。</li>
+      <li>ポイントタウンのサービス検索や商品検索、掲示板検索は、ポイント獲得の対象にはなりませんのでご注意ください。</li>
+      <li>ポイントの獲得状況は、ポイント履歴でご確認ください。</li>
+    </ul>
+    <div class="close clickable">閉じる</div>
+  </div>
+
+</div>
+<!-- /.section-search -->
+
+<div id="favorite-list" class="clearfix">
+  <strong class="func-ttl">お気に入り<a href="http://www.pointtown.com/ptu/mypage/favorite_list.do" target="_blank">一覧を見る <i class="fa fa-chevron-right"></i></a></strong>
+  <div class="inner"></div>
+<!-- お気に入り案件 -->
+</div>
+
+<div id="tag"></div>
+</body>
+</html>
