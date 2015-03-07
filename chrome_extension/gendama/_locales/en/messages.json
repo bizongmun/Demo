@@ -1,0 +1,27 @@
+{
+	"extName" : {
+		"message" : "げん玉"
+	},
+	"extDescription" : {
+		"message" : "ポイントサイトでお小遣い稼ぎならげん玉"
+	},
+	"extTitle" : {
+		"message" : "げん玉"
+	},
+	"click_here": {
+		"message": "Left click to list acceptLanguages."
+	},
+	"chrome_accept_languages": {
+		"message": "$CHROME$ accepts $languages$ languages",
+	    "placeholders": {
+	      	"chrome": {
+	        	"content": "Chrome",
+	        	"example": "Chrome"
+	    	},
+	      	"languages": {
+	        	"content": "$1",
+	        	"example": "en-US,sr,de"
+	      	}
+	    }
+	}
+}
