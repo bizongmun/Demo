@@ -8,9 +8,6 @@
 	"extTitle" : {
 		"message" : "げん玉"
 	},
-	"click_here": {
-		"message": "Left click to list acceptLanguages."
-	},
 	"chrome_accept_languages": {
 		"message": "$CHROME$ accepts $languages$ languages",
 	    "placeholders": {

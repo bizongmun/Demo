@@ -5,12 +5,17 @@
 	"version" : "1.0",
 	"default_locale" : "en",
 	"icons": {
-		"48": "mori.png",
-		"128": "mori.png"
+		"48": "image/mori.png",
+		"128": "image/mori.png"
 	},
 	"browser_action" : {
 		"default_title" : "__MSG_extTitle__",
-		"default_icon" : "mori.png",
+		"default_icon" : "image/mori.png",
 		"default_popup" : "popup.html"
-	}
+	},
+	"permissions": [
+		"webRequest",
+    	"*://*/*"
+	],
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

@@ -1,0 +1,136 @@
+body {
+    margin:0;
+    padding:0;
+}
+/* ログインボタン(ログアウト時) ======================================== */
+body #loginBox {
+    width: 350px;
+    height: 200px;
+    float: right;
+    margin: 8px 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    overflow: hidden;
+    background: url("/image/title_pattern.png") #ffe5bf repeat;
+    padding: 2px;
+}
+body #loginBox .border {
+    padding: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    height: 68px;
+}
+body #loginBox ul {
+    background-color: #FFF;
+    height: 68px;
+}
+body #loginBox ul li {
+    float: left;
+    padding: 8px 7px;
+}
+body #userBox ul#userBoxLink { float: right }
+body #userBox ul#userBoxLink li {
+    float: left;
+    margin-right: 4px;
+    font-size: 10px;
+    line-height: 17px;
+}
+/* RWSバー ======================================== */
+#rwsbar {
+
+}
+#rwsbar ul#pulldown-menu {
+    width: 100%;
+    overflow: hidden;
+}
+
+#rwsbar ul#pulldown-menu li {
+    float: left;
+    overflow: hidden;
+    width: 49%;
+    margin: 0 1%  1% 0;
+    padding: 5px;
+    cursor: pointer;
+    text-align: right;
+    border: 1px solid #eee;
+    background: #fff;
+}
+#rwsbar ul#pulldown-menu li a {
+    display: block;
+    text-decoration: none;
+    color: #f95358;
+}
+li.userName a {
+    font-size:12px;
+    font-weight:bold;
+}
+li.userPoint a {
+    background: url("/image/point.png") no-repeat scroll 3px 5px transparent;
+    float: left;
+    line-height: 24px;
+    padding-left: 19px;
+    vertical-align: bottom;
+}
+/* 検索 ======================================== */
+#search-menu {
+    margin: 0 auto
+}
+.auto960 {
+    margin: 0 auto;
+    width: 960px;
+}
+#searchWhiteBox {
+    background-color: white;
+    float: left;
+    margin: 8px 0;
+    overflow: hidden;
+    width: 400px;
+    height:22px;
+    border-radius: 3px;        /* CSS3草案 */  
+    -webkit-border-radius: 3px;    /* Safari,Google Chrome用 */  
+    -moz-border-radius: 3px;   /* Firefox用 */  
+}
+#searchWhiteBox select{
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+    -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+    -ms-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+    background-color: #F5F5F5;
+    border: medium none;
+    color: #222222;
+    font-size: 14px;
+    height: 22px;
+    letter-spacing: 1px;
+    border-radius: 3px 0 0 3px;        /* CSS3草案 */  
+    -webkit-border-radius: 3px 0 0 3px;    /* Safari,Google Chrome用 */  
+    -moz-border-radius: 3px 0 0 3px;   /* Firefox用 */  
+}
+.searchMenu {
+    float:left;
+    font-size:14px;
+    margin:0;
+    padding:2px;
+    width:120px;
+}
+.kensakumadobox {
+    border: medium none;
+    border-radius: 2px 2px 2px 2px;
+    float: right;
+    font-size: 15px;
+    margin:1px 0 0 0;
+    padding:2px 5px 5px 5px;
+    vertical-align: top;
+    width: 300px;
+}
+.kensakumadoboxBtn {
+    float: left;
+    margin: 8px 6px 0;
+}
+
+/* 人気 ======================================== */
+#favourite-menu {
+
+}

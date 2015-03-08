@@ -1,16 +1,71 @@
-<html>
-	<head>
-		<style>
-		body {
-	        color: black;
-	        width: 300px;
-	      }
-	    </style>
-	    <script src="popup.js"></script>
-	 </head>
-	 <body>
-	    <div id="accept_lang">
-	      <span id="languageSpan"></span>
-	    </div>
-	 </body>
+<!doctype html>
+<html lang="ja" id="pt-plugin">
+<head>
+<meta charset="UTF-8">
+<title>げん玉</title>
+<!-- css -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+<!-- JS files -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery.cookie-1.4.1.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/search_box.js"></script>
+<script src="js/ecl.js"></script>
+<script src="js/popup.js"></script>
+</head>
+<body>
+	<section id="loginBox" style="display:none">
+		<span>げん玉にログインしていません</span>
+        <div class="border">
+          <ul>
+          	<li><a href="http://www.gendama.jp/special/" target="_blank"><img src="http://img.gendama.jp/img/neo/index/entry_btnpng.png" alt="新規会員登録"></a></li>
+            <li><a href="" id="login_link" target="_blank"><img src="http://img.gendama.jp/img/neo/index/login_btnpng.png" alt="ログインする"></a></li>
+          </ul>
+          <ul id="userBoxLink">
+            <li>
+              <a href="http://www.gendama.jp/pages/full/info/manual/" id="linkAbout" target="_blank">げん玉マニュアル</a>
+              <a href="http://www.gendama.jp/pages/full/info/about01" id="linkAbout" target="_blank">げん玉とは</a>
+            </li>
+            <li>
+              <a href="http://u.realworld.jp/help/inquire" id="linkFaq" target="_blank">ヘルプ</a>
+            </li>
+          </ul>
+        </div>
+        <br/>
+        <!--<span>ログイン後もう一度このウインドウを開けてください</span>-->
+    </section>
+    <section id="pageBox" style="display:none">
+    	<div id="rwsbar">
+    		<ul id="pulldown-menu">
+        		<li class="userName">
+	        		<a id="profile" href="http://www.gendama.jp/profile/edit" target="_blank"></a>
+        		</li>
+        		<li class="userPoint">
+        			<a href="http://u.realworld.jp/passbook" target="_blank" style="display:inline;"><b>有効</b><span id="pointhold" class="rbarPoint"></span></a>
+        		</li>
+        		<li class="userPoint">
+	        		<a href="http://u.realworld.jp/passbook" target="_blank" style="display:inline;"><b>判定中</b><span id="pointexpect" class="rbarPoint"></span></a>&nbsp;
+        		</li>
+      		</ul>
+    	</div>
+    	<div id="search-menu">
+    		<div class="auto960 clearfix">
+            <form action="http://www.gendama.jp/search/neo/" method='GET' class="search_form">
+	            <div id="searchWhiteBox">
+	            	<select class="searchMenu" name="searchMenu">
+	                	<option value="service">サービス検索</option>
+	                	<option value="rakuten">楽天検索</option>
+	                	<option value="yahoo">Yahoo検索</option>
+	            	</select>
+	            	<input type="text" style="color:#646464;" value="" id="searchtext" class="kensakumadobox" name="word" alt='rakuten'>
+	            </div>
+          		<input type="image" src="http://img.gendama.jp/img/neo/index/service_btn.png" value="submit" tabindex="1" alt="検索" class="kensakumadoboxBtn"/>
+            </form>
+        	</div>
+    	</div>
+    	<div id="favourite-menu">
+    	</div>
+    </section>
+</body>
 </html>
