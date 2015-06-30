@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../library/angular.js"></script>
+		<script src="formatting.js"></script>
+	</head>
+	<body ng-app="formatting">
+		<div ng-controller="FormattingController">
+			<h3>1. Simple filter</h3>
+			<strong>Filtered data: </strong>{{stringData | uppercase}}<br/>
+			<h3>2. Date</h3>
+			<strong>Filtered data (HTML): {{dateData | date: "dd MMM yyyy"}}</strong><br/>
+			<strong>Filtered data (js): {{formatDate(dateData, "dd MM yyyy")}}</strong>
+		</div>
+	</body>
+</html>

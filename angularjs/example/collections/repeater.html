@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../library/angular.js"></script>
+		<script src="repeater.js"></script>
+	</head>
+	<body ng-app="repeater">
+		<div ng-controller="RepeaterController">
+			<h3>Simple table</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>First name</th>
+						<th>Last name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people">
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>2. Table with rows selection</h3>
+    		<table>
+      			<thead>
+      				<tr>
+        				<th>
+          					<input type="checkbox" ng-model="areAllPeopleSelected" ng-change="updatePeopleSelection(selectablePeople, areAllPeopleSelected)" />
+        				</th>
+        				<th>First name</th>
+        				<th>Last name</th>
+      				</tr>
+      			</thead>
+      			<tbody>
+      				<tr ng-repeat="person in selectablePeople">
+        				<td><input type="checkbox" ng-model="person.isSelected" /></td>
+        				<td>{{person.firstName}}</td>
+        				<td>{{person.lastName}}</td>
+      				</tr>
+      			</tbody>
+    		</table>
+
+    		<h3>3. Add and remove items</h3>
+    		<button ng-click="addStringToArray()">Add item</button><br/>
+    		<table>
+    			<tbody>
+    				<tr ng-repeat="str in stringArray">
+    					<td><button ng-click="$parent.removeStringFromArray($index)">Remove item</button></td>
+    					<td>{{str}}</td>
+    				</tr>
+    			</tbody>
+    		</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>-->
+		<script src="../../library/angular.js"></script>
+		<script src="factory.js"></script>
+	</head>
+	<body ng-app="registeringfactory">
+		<div ng-controller="FactoryController">
+			<strong>First name:</strong>{{personManagerInstance.getFirstName()}}<br/>
+			<strong>Second name:</strong><span ng-bind="personManagerInstance.getSecondName()"></span><br/>
+			<strong>Full name:</strong>{{personManagerInstance.getFullName("&")}}<br/>
+			<label>Set the first name: <input type="text" ng-model="personInstance.first"/></label><br/>
+			<label>Set the second name: <input type="text" ng-model="personInstance.second"/></label><br/>
+		</div>
+	</body>
+</html>

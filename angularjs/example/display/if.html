@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../library/angular.js"></script>
+	</head>
+	<body ng-app>
+		<h3>If</h3>
+		<label>Display the text<input type="checkbox" ng-model="ifvalue"/></label>
+		<br/>
+		<div ng-if="ifvalue">CHECKED</div>
+		<div ng-if="!ifvalue">UNCHECKED</div>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../library/angular.js"></script>
+		<script src="filter.js"></script>
+	</head>
+	<body ng-app="filter">
+		<div ng-controller="FilterController">
+			<h3>1. Simple substring filter</h3>
+			<label>Filter: <input type="text" ng-model="simpleFilter"/></label><br/>
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people | filter : simpleFilter">
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+						<td>{{person.age}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>2. Last Name Filter</h3>
+			<label>Filter: <input type="text" ng-model="lastNameFilter"/></label><br/>
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people | filter : {lastName : lastNameFilter}">
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+						<td>{{person.age}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>3. First or Last Name Filter</h3>
+			<label>Filter: <input type="text" ng-model="firstLastNameFilter"/></label><br/>
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in people | filter : {$ : firstLastNameFilter}">
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+						<td>{{person.age}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>4. Number of First (or Last) Name Filter</h3>
+			<label>Filter: <input type="text" ng-model="numberLastNameFilter"/></label><br/>
+			<table>
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in filteredPeople = (people | filter : {$ : numberLastNameFilter})">
+						<td>{{person.firstName}}</td>
+						<td>{{person.lastName}}</td>
+						<td>{{person.age}}</td>
+					</tr>
+				</tbody>
+				Number of fitered people : {{filteredPeople.length}}
+			</table>
+		</div>
+	</body>
+</html>

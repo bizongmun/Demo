@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../library/angular.js"></script>
+	</head>
+	<body ng-app>
+		<h3>Switch</h3>
+		<label>Type the number you want to show (1-5):<input type="text" ng-model="showNumber"/></label>
+		<br/>
+		<div ng-switch="showNumber">
+			<div ng-switch-when="1">1</div>
+			<div ng-switch-when="2">2</div>
+			<div ng-switch-when="3">3</div>
+			<div ng-switch-when="4">4</div>
+			<div ng-switch-when="5">5</div>
+		</div>
+	</body>
+</html>
