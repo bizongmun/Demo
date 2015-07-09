@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+        <script src="service.js"></script>
+    </head>
+    <body ng-app="service">
+        <div ng-controller="ServiceController">
+            <input ng-init="message='test'" ng-model="message" >
+            <button ng-click="callNotify(message);">notify</button>
+            <p>Click 3 times to see an alert</p>
+        </div>
+    </body>
+</html>
