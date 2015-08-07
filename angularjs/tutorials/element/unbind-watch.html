@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app="Demo" ng-controller="AppController">
+<head>
+  <meta charset="utf-8" />
+  <title>
+    Unbinding $watch() Listeners In AngularJS
+  </title>
+</head>
+<body>
+
+    <h1>
+        Unbinding $watch() Listeners In AngularJS
+    </h1>
+
+    <p>
+        <a ng-click="incrementCount()">Click it, click it real good!</a>
+        &raquo;
+        {{ clickCount }}
+    </p>
+
+    <p ng-show="isShowingFeedback">
+        <em>Heck yeah, now that's how you click a link!!</a>
+    </p>
+
+
+
+    <!-- Load jQuery and AngularJS from the CDN. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.0.0.min.js">
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js">
+    </script>
+    <script type="text/javascript">
+        // Create an application module for our demo.
+        var app = angular.module( "Demo", [] );
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // Define the root-level controller for the application.
+        app.controller(
+            "AppController",
+            function( $scope ) {
+                // I keep track of how many times the user has clicked
+                // the link.
+                $scope.clickCount = 0;
+                // I determine if the "encouraging" feedback is shown.
+                $scope.isShowingFeedback = false;
+                // ---
+                // WATCHERS.
+                // ---
+                // When you call the $watch() method, AngularJS
+                // returns an unbind function that will kill the
+                // $watch() listener when its called.
+                var unbindWatcher = $scope.$watch(
+                    "clickCount",
+                    function( newClickCount ) {
+                        console.log( "Watching click count." );
+                        if ( newClickCount >= 5 ) {
+                            $scope.isShowingFeedback = true;
+                            // Once the feedback has been displayed,
+                            // there's no more need to watch the change
+                            // in the model value.
+                            unbindWatcher();
+                        }
+                    }
+                );
+                // ---
+                // PUBLIC METHODS.
+                // ---
+                // I increment the click count.
+                $scope.incrementCount = function() {
+                    $scope.clickCount++;
+                    // NOTE: You could just as easily have called a
+                    // counter-related method right here to test when
+                    // to show feedback. I am just demonstrating an
+                    // alternate approach.
+                };
+            }
+        );
+    </script>
+
+</body>
+</html>
