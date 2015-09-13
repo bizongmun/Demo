@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="../../library/angular.js"></script>
+		<script src="keyboard.js"></script>
+	</head>
+	<body ng-app="keyboard">
+		<div ng-controller="KeyboardController">
+			Type:
+			<br/>
+			<input type="text" ng-keydown="onKeyDown($event)" ng-keyup="onKeyUp($event)" ng-keypress="onKeyPress($event)"/>
+			<br/>
+			<strong>KEY DOWN RESULT:</strong> {{onKeyDownResult}}<br />
+    		<strong>KEY UP RESULT:</strong> {{onKeyUpResult}}<br />
+    		<strong>KEY PRESS RESULT:</strong> {{onKeyPressResult}}
+		</div>
+	</body>
+</html>

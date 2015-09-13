@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
+		<script src="scope.js"></script>
+	</head>
+	<body ng-app="hierarchies">
+		<div ng-controller="HierarchiesController">
+			Hello {{name}}
+		</div>
+		<div ng-controller="ListController">
+			<ol>
+				<li ng-repeat="name in names">{{name}} from {{department}}</li>
+			</ol>
+		</div>
+	</body>
+</html>

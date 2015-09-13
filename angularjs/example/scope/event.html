@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
+		<script src="scope.js"></script>
+	</head>
+	<body ng-app="event">
+		<div ng-controller="EventController">
+			Root scope MyEvent count: {{count}}
+			<ul>
+				<li ng-repeat="i in [1]" ng-controller="EventController">
+					<button ng-click="$emit('MyEvent')">emit</button>
+					<button ng-click="$broadcast('MyEvent')">broadcast</button>
+					<br/>
+					Middle scope MyEvent count: {{count}}
+					<ul>
+					
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
